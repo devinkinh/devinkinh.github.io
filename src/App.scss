@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat&display=swap');
+@import "mystyles.scss";
+
 .App {
   text-align: center;
 }
@@ -13,11 +16,16 @@
   }
 }
 
+.accent {
+  color:$yellow;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: $primary;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'Fira Code', monospace;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
