@@ -1,38 +1,36 @@
-import React, { useState, useEffect } from 'react';
-
-import logo from './logo.svg';
+import React from 'react';
 import './App.scss';
+import Details from './Details';
 
 function App() {
 
-  const [currentTime, setCurrentTime] = useState(0);
+ 
 
-  useEffect( () => {
-    async function fetchData()  {
-      let result = await fetch('/time');
-      result = await result.json()
-
-      setCurrentTime(result.time);
-    }
-    setInterval(()=>{
-      fetchData();    
-    },1000);
-  }, []);
-
-  const getTime= function(time){
-    let d = new Date(0); // The 0 there is the key, which sets the date to the epoch
-    d.setUTCSeconds(time);
-    return d+"";
-  }
   return (
     <div className="App">
-      <header className="App-header">
-        Kevin Dinh
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="accent">The current time is {getTime(currentTime)}.</p>
-      </header>
+      <div className="portfolio-container">
+        <div className="about-me">
+          <div id="pic">
+          </div>
+          <div id="description">
+            <h2 style={{ color:'red', marginBottom: 40 + 'px' }}>
+              Hey!
+          </h2>
+            <span style={{ fontSize: .5 + 'em' }}>
+              <p>
+                My name’s Kevin Dinh.
+            </p>
+              <p>
+                I’m an Alexandria, VA based fullstack-developer who likes to keep it simple.
+          </p>
+            </span>
+          </div>
+        </div>
+        < Details/>
+      </div>
     </div>
   );
 }
+
 
 export default App;
