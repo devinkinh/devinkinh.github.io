@@ -70,8 +70,8 @@
   font-weight: 500;
   font-size: 36px;
   color: #FFFFFF;
-
 }
+
 .nav-bar{
   height: 8vh;
   position: sticky;
@@ -91,30 +91,75 @@
   scroll-margin-top: 5rem;
   height: 79vh;
   margin:20px;
-  // border:solid thin red;
+  // border:solid thin rgba(218, 211, 41, 1);
 }
 
 .active {
-  color: red;
+  color: rgba(218, 211, 41, 1);
   animation-name: makeActive;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 
 .hidden {
   animation-name: makeInactive;
-  animation-duration: .6s;
+  animation-duration: 1s;
   color: white;
 
 }
 
 @keyframes makeActive {
   from {color: white;}
-  to {color: red;}
+  to {color: rgba(218, 211, 41, 1);}
 }
 
 
 @keyframes makeInactive {
-  from {color: red;}
+  from {color: rgba(218, 211, 41, 1);}
   to {color: white;}
+}
+
+@media only screen and (max-width : 460px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #description {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    color: black;
+  }
+
+  .about-me {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 60px;
+    margin: 20px;
+  }
+
+  #pic {
+    margin: 0 auto;
+  }
+
+  .details {
+    background-color: white;
+    margin: 0 auto;
+    width: 95%;
+    height: 60vh;
+    border-radius: 9px;
+    overflow: auto;
+  }
+  a {
+    font-size: .8em;
+  }
+  
 }

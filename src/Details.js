@@ -35,9 +35,10 @@ export default class Details extends React.Component {
             });
         }
     }
+
     onChange = (isVisible, section) => {
         this.setState({target:section});
-      }
+    }
 
     render() {
         return (
@@ -45,11 +46,10 @@ export default class Details extends React.Component {
                 <div className="nav-bar">
                 {this.sections.map(section=>{
                       return (
-                        <div className="nav-item">
+                        <div key={section.toString()}  className="nav-item">
                             <a onClick={(e) => {
                                 this.handleOnClick(section, e);
-                                this.setState({ target: section });
-                                }}>  <span className={this.state.target == section? 'active' :'hidden'}>{"{ "}</span>{section}<span className={this.state.target == section? 'active' :'hidden'}>{" }"}</span>
+                                }}>  <span className={this.state.target === section ? 'active' :'hidden'}>{"{ "}</span>{section}<span className={this.state.target === section? 'active' :'hidden'}>{" }"}</span>
                             </a>
                         </div>
                       );  
@@ -59,11 +59,11 @@ export default class Details extends React.Component {
                 <div style={{ backgroundColor: 'white' }}>
                     {this.sections.map(section=>{
                       return (
-                        <Vis onChange={(event)=>{
+                        <Vis  key={section.toString()}  onChange={(event)=>{
                             this.onChange(event,section)
                         }}>
 
-                        <section key={section.toString()} className="sections" ref={this[section]}>
+                        <section className="sections" ref={this[section]}>
                             {section}
                         </section>
                         </Vis>

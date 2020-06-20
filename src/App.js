@@ -13,7 +13,7 @@ function App() {
           <div id="pic">
           </div>
           <div id="description">
-            <h2 style={{ color:'red', marginBottom: 40 + 'px' }}>
+            <h2 style={{ color:'rgba(218, 211, 41, 1)', marginLeft: 60 + 'px',marginTop: 60 + 'px' }}>
               Hey!
           </h2>
             <span style={{ fontSize: .5 + 'em' }}>
